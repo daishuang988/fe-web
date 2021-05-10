@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="选号" />
+    <div class="wp" id="wp"></div>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wp {
+            text-align: center;
+        }
+        /* 设置双色球的基本样式 */
+        
+        .wp span {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 2px #F00 solid;
+            margin: 25px 5px 0 5px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            color: #333;
+        }
+        /* 第七个球的样式 */
+        
+        .wp span:nth-of-type(7n) {
+            border: 2px blue solid;
+        }
+        /* 设置按钮的基本样式 */
+        
+        #btn {
+            display: block;
+            height: 50px;
+            width: 100px;
+            background: #FF0000;
+            color: #fff;
+            border-radius: 5px;
+            border: 1px #333 solid;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 50px auto 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var btn = document.getElementById("btn"); //获取button按钮属性
+        var wp = document.getElementById("wp"); //获取wp属性
+        btn.onclick = function() { //btn 点击执行内容
+            let arr = []; //声明一个空数组
+            for (var i = 0; i < 6; i++) { //for 循环
+                var a = Math.floor((Math.random() * 33) + 1); //声明一个变量把1-33的随机数放进变量里面
+                if (arr.indexOf(a) == -1) { //判断是否有重复的数字，如果有就放弃那个数字，重新随机获取一个随机数字，直到6个随机数没有重复值位置
+                    arr.push(a);
+                } else {
+                    i -= 1;
+                }
+            }
+
+            function paixu(a, b) {
+                return (a - b);
+            }
+            arr.sort(paixu);
+            for (let n = 0; n < arr.length; n++) { //把获取的6个随机数数组arr的值，分别写入wp内
+                wp.innerHTML += '<span>' + arr[n] + '</span>';
+
+            }
+
+            wp.innerHTML += '<span>' + Math.floor((Math.random() * 16) + 1) + '</span>'; //获取第七个蓝色球，1-16随机数		
+            wp.innerHTML += '<br />';
+            console.log(arr);
+        };
+    </script>
+</body>
+
+</html>

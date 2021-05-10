@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <th>第一个红球</th>
+            <th>第二个红球</th>
+            <th>第三个红球</th>
+            <th>第四个红球</th>
+            <th>第五个红球</th>
+            <th>第六个红球</th>
+            <th>蓝球</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <!-- 第一个红球的布局 -->
+                    <div class="redno1" style="width: 100%;
+                    height: 100%;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+                <td>
+                    <!-- 第二个红球的布局 -->
+                    <div class="redno2" style="width: 100%;
+                    height: 100%;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px">
+                    </div>
+                </td>
+                <td>
+                    <!-- 第三个红球的布局 -->
+                    <div class="redno3" style="width: 100%;
+                    height: 100%;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+                <td>
+                    <!-- 第四个红球的布局 -->
+                    <div class="redno4" style="width: 100%;
+                    height: 100px;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+                <td>
+                    <!-- 第五个红球的布局 -->
+                    <div class="redno5" style="width: 100%;
+                    height: 100px;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+                <td>
+                    <!-- 第六个红球的布局 -->
+                    <div class="redno6" style="width: 100%;
+                    height: 100px;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+                <td>
+                    <!-- 蓝球 -->
+                    <div class="blue" style="width: 100%;
+                    height: 100px;
+                    text-align: center;    
+                    background-color:rgb(210, 210, 231);
+                    line-height: 100px;">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        window.onload = function() {
+            // 第一个红色球的部分
+            var rdn1 = document.querySelector(".redno1 ");
+            //页面一加载完成就生成随机数调用rand()
+            rdn1.innerHTML = rand(4);
+            //点击切换随机码
+            rdn1.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+            // 生成随机码
+            function rand(number) {
+                //用来存储产生的随机数
+                var redball1 = 0;
+                redball1 = Math.ceil(Math.random() * 33);
+                return redball1;
+            }
+            // 第二个红色球的部分
+            var rdn2 = document.querySelector(".redno2 ")
+            rdn2.innerHTML = rand(4);
+            rdn2.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var redball2 = 0;
+                redball2 = Math.ceil(Math.random() * 33);
+                return redball2;
+            }
+            // 第三个红色球的部分
+            var rdn3 = document.querySelector(".redno3 ")
+            rdn3.innerHTML = rand(4);
+            rdn3.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var redball3 = 0;
+                redball3 = Math.ceil(Math.random() * 33);
+                return redball3;
+            }
+            // 第四个红色球的部分
+            var rdn4 = document.querySelector(".redno4 ")
+            rdn4.innerHTML = rand(4);
+            rdn4.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var redball4 = 0;
+                redball4 = Math.ceil(Math.random() * 33);
+                return redball4;
+            }
+            // 第五个红色球的部分
+            var rdn5 = document.querySelector(".redno5 ")
+            rdn5.innerHTML = rand(4);
+            rdn5.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var redball5 = 0;
+                redball5 = Math.ceil(Math.random() * 33);
+                return redball5;
+            }
+            // 第六个红色球的部分
+            var rdn6 = document.querySelector(".redno6 ")
+            rdn6.innerHTML = rand(4);
+            rdn6.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var redball6 = 0;
+                redball6 = Math.ceil(Math.random() * 33);
+                return redball6;
+            }
+            // 蓝色球的部分
+            var blue1 = document.querySelector(".blue ")
+            blue1.innerHTML = rand(4);
+            blue1.onclick = function() {
+                var num = rand(4);
+                this.innerHTML = num;
+            };
+
+            function rand(number) {
+                var blueball1 = 0;
+                blueball1 = Math.ceil(Math.random() * 33);
+                return blueball1;
+            }
+        }
+    </script>
+</body>
+
+</html>
